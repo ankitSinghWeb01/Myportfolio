@@ -26,35 +26,54 @@ const HeroSection = () => {
     ];
 
 
-
+    const phoneNumber = "8076950595";
+    const message = encodeURIComponent("Hi there, I want to get in touch!");
+    const waLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
     return (
         <div className="min-h-screen w-full bg-[#0e0e0e] text-white relative px-4 md:px-20 py-4 font-sans overflow-hidden">
             {/* Top Navigation Bar */}
             <Row justify="center" className="z-10 relative mb-10">
-                <div className="bg-black rounded-xl px-4 h-14 flex items-center gap-4 shadow border border-gray-700">
-                    <Button
-                        type="default"
-                        className="text-white bg-black border-none hover:bg-white hover:text-black transition-all duration-300"
-                    >
-                        Download Resume
-                    </Button>
-                    <Divider type="vertical" className="bg-gray-600 h-6" />
-                    <Button
-                        type="default"
-                        className="text-white bg-black border-none hover:bg-white hover:text-black transition-all duration-300"
-                    >
-                        Contact Now
-                    </Button>
-                    <Divider type="vertical" className="bg-gray-600 h-6" />
-                    <Button
-                        type="default"
-                        className="text-white bg-black border-none hover:bg-white hover:text-black transition-all duration-300"
-                    >
-                        Work Portfolio
-                    </Button>
+                <div className="bg-black rounded-xl px-4 py-4 shadow border border-gray-700 w-full max-w-3xl">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                        <a href="/resume.pdf" download className="w-full sm:w-auto">
+                            <Button
+                                type="default"
+                                className="w-full sm:w-auto text-white bg-black border-none hover:bg-white hover:text-black transition-all duration-300"
+                            >
+                                Download Resume
+                            </Button>
+                        </a>
+
+                        <Divider
+                            type="vertical"
+                            className="hidden sm:block bg-gray-600 h-6"
+                        />
+
+                        <a href={waLink} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                            <Button
+                                type="default"
+                                className="w-full sm:w-auto text-white bg-black border-none hover:bg-white hover:text-black transition-all duration-300"
+                            >
+                                Contact Now
+                            </Button>
+                        </a>
+
+                        <Divider
+                            type="vertical"
+                            className="hidden sm:block bg-gray-600 h-6"
+                        />
+
+                        <Button
+                            type="default"
+                            className="w-full sm:w-auto text-white bg-black border-none hover:bg-white hover:text-black transition-all duration-300"
+                        >
+                            Work Portfolio
+                        </Button>
+                    </div>
                 </div>
             </Row>
+
 
 
 
@@ -63,7 +82,7 @@ const HeroSection = () => {
 
             {/* Hero Section Content */}
             <div
-                className="relative z-10 px-6 py-10 rounded shadow-md"
+                className="relative z-10 px-6 py-10 rounded shadow-md "
                 style={{ backgroundImage: `url(${Union})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
             >
                 <Row gutter={[32, 32]} align="middle">
@@ -73,7 +92,7 @@ const HeroSection = () => {
                             <h1 className="text-4xl sm:text-5xl font-bold mb-2">
                                 <span className="text-gray-300">Ankit</span> Singh
                             </h1>
-                            <h2 className="text-xl sm:text-2xl text-gray-400 mb-4">(Frontend Developer)</h2>
+                            <h2 className="text-xl sm:text-2xl text-gray-400 mb-4">Frontend Developer</h2>
                             <p className="text-gray-300 mb-6 leading-relaxed">
                                 Result-oriented software professional with over 1 years of experience in software design and development.
                                 Proven ability to produce brainstorming strategies. Expertise spans all phases of Content Development,
@@ -88,15 +107,22 @@ const HeroSection = () => {
                                 >
                                     Download Resume
                                 </Button>
-                                <Button
-                                    type="primary"
-                                    size="large"
-                                    className="rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:scale-105 transition"
-                                >
-                                    Contact Now
-                                </Button>
+
+
+
+                                <a href={waLink} target="_blank" rel="noopener noreferrer">
+
+                                    <Button
+                                        type="primary"
+                                        size="large"
+                                        className="rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:scale-105 transition"
+                                    >
+                                        Contact Now
+                                    </Button>
+                                </a>
                             </div>
                         </div>
+
                     </Col>
 
                     {/* Right Column */}
@@ -179,19 +205,29 @@ const HeroSection = () => {
                 </div>
             </div>
 
+            <div className="relative w-full z-10 px-6 py-10 rounded shadow-md overflow-hidden">
+                {/* Background Overlay */}
+                <div className="absolute inset-0 w-full bg-slate-950 opacity-50 z-0"></div>
 
-            <div className="mt-14 w-full px-4 md:px-6 lg:px-10  gap-2">
-                <div className="max-w-7xl mx-auto bg-[#1a1a1a]4 py-10 rounded-2xl border border-[#2d2d2d] shadow-md">
+                {/* Content */}
+                <div
+                    className="relative z-10"
+                    style={{
+                        backgroundImage: `url(${Union})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'cover',
+                    }}
+                >
                     <Row gutter={[32, 32]} align="middle">
                         {/* Left Column */}
                         <Col xs={24} md={12}>
                             <div className="text-left px-8 ">
-                                <img
+                                <div>  <img
                                     src={zillitlogo}
                                     className="rounded-xl border-[3px] border-white text-lg h-32 w-32 mt-2"
                                     alt="Zillit Logo"
                                 />
-                                <p className="text-4xl font-semibold mt-4 text-gray-300">Zillit</p>
+                                    <p className="text-4xl font-semibold mt-4 ml-8 text-gray-300">Zillit</p></div>
                                 <p className="text-2xl font-semibold mt-2 text-gray-400">Frontend Developer</p>
                                 <p className="text-xl font-semibold mt-2 text-gray-400">2022 - Present</p>
                                 <p className="text-md font-semibold mt-2 text-gray-400">
@@ -199,13 +235,19 @@ const HeroSection = () => {
                                 </p>
 
                                 <div className="flex flex-wrap gap-6 mt-6">
-                                    <Button
-                                        type="primary"
-                                        size="large"
-                                        className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:scale-105 transition w-52 h-14"
-                                    >
-                                        Visit Zillit
-                                    </Button>
+
+                                    <a href="
+                                    https://web.zillit.com/home" target="_blank" rel="noopener noreferrer">
+
+                                        <Button
+                                            type="primary"
+                                            size="large"
+                                            className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:scale-105 transition w-52 h-14"
+                                        >
+                                            Visit Zillit
+                                        </Button>
+                                    </a>
+
                                 </div>
                             </div>
                         </Col>
@@ -240,18 +282,30 @@ const HeroSection = () => {
 
             <Row justify="center" className="z-10 relative mb-10 gap-3">
                 {/* <div className="bg-black rounded-xl px-4 h-14 flex items-center gap-4 shadow border border-gray-700"> */}
-                <Button
-                    type="default"
-                    className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:scale-105 transition w-52 h-14 font-bold text-white"
-                >
-                    Download Resume
-                </Button>
-                <Button
+                <a href="/resume.pdf" download>
+                    <Button
+                        type="default"
+                        className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:scale-105 transition w-52 h-14 font-bold text-white"
+                    >
+                        Download Resume
+                    </Button>
+                </a>
+
+                {/* <Button
                     type="default"
                     className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:scale-105 transition w-52 h-14 font-bold text-white"
                 >
                     Contact Now
-                </Button>
+                </Button> */}
+
+                <a href={waLink} target="_blank" rel="noopener noreferrer">
+                    <Button
+                        type="default"
+                        className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:scale-105 transition w-52 h-14 font-bold text-white"
+                    >
+                        Contact Now
+                    </Button>
+                </a>
                 {/* </div> */}
             </Row>
 
@@ -272,10 +326,13 @@ const HeroSection = () => {
                     <p><span className='text-xl font-bold'>Contact : {''}</span>8076950595</p>
                 </div>
                 <div className='grid grid-cols-3 gap-12 justify-center text-center mt-6'>
-                    <img
-                        src={whatsp}
-                        alt="Portfolio Line"
-                    />
+                    <a href={waLink} target="_blank" rel="noopener noreferrer">
+
+                        <img
+                            src={whatsp}
+                            alt="Portfolio Line"
+                        />
+                    </a>
                     <img
                         src={linkedin}
                         alt="Portfolio Line"
@@ -287,29 +344,51 @@ const HeroSection = () => {
 
 
                 </div>
-                <div className="bg-black rounded-xl px-4 h-14 flex items-center gap-4 shadow border border-gray-700 mt-5">
-                    <Button
-                        type="default"
-                        className="text-white bg-black border-none hover:bg-white hover:text-black transition-all duration-300"
-                    >
-                        Download Resume
-                    </Button>
-                    <Divider type="vertical" className="bg-gray-600 h-6" />
-                    <Button
-                        type="default"
-                        className="text-white bg-black border-none hover:bg-white hover:text-black transition-all duration-300"
-                    >
-                        Contact Now
-                    </Button>
-                    <Divider type="vertical" className="bg-gray-600 h-6" />
-                    <Button
-                        type="default"
-                        className="text-white bg-black border-none hover:bg-white hover:text-black transition-all duration-300"
-                    >
-                        Work Portfolio
-                    </Button>
-                </div>
+                <Row justify="center" className="z-10 relative mt-8">
+                    <div className="bg-black rounded-xl px-4 py-4 shadow border border-gray-700 w-full max-w-3xl">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                            <a href="/resume.pdf" download className="w-full sm:w-auto">
+                                <Button
+                                    type="default"
+                                    className="w-full sm:w-auto text-white bg-black border-none hover:bg-white hover:text-black transition-all duration-300"
+                                >
+                                    Download Resume
+                                </Button>
+                            </a>
+
+                            <Divider
+                                type="vertical"
+                                className="hidden sm:block bg-gray-600 h-6"
+                            />
+
+                            <a href={waLink} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                                <Button
+                                    type="default"
+                                    className="w-full sm:w-auto text-white bg-black border-none hover:bg-white hover:text-black transition-all duration-300"
+                                >
+                                    Contact Now
+                                </Button>
+                            </a>
+
+                            <Divider
+                                type="vertical"
+                                className="hidden sm:block bg-gray-600 h-6"
+                            />
+
+                            <Button
+                                type="default"
+                                className="w-full sm:w-auto text-white bg-black border-none hover:bg-white hover:text-black transition-all duration-300"
+                            >
+                                Work Portfolio
+                            </Button>
+                        </div>
+                    </div>
+                </Row>
+
             </div>
+
+
+
 
 
         </div>
