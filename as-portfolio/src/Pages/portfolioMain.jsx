@@ -8,7 +8,6 @@ const PortfolioMain = () => {
     return (
 
         <div style={{ minHeight: '100vh', background: '#F0F0F0' }}>
-
             <Header />
         </div>
 
