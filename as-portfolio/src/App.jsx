@@ -1,25 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
-import UIProvider from './Pages/providers/UIProvider'
-import ProtectedRoute from './router/protectedRoute'
-import Layout from './Layout'
+import { BrowserRouter as Router } from "react-router-dom";
+import UIProvider from "./Pages/providers/UIProvider";
+import ProtectedRoute from "./router/protectedRoute";
+import Layout from "./Layout";
+import "./App.css";
 function App() {
-
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <UIProvider>
           <Layout>
             <ProtectedRoute />
-          </Layout>       
-           </UIProvider>
-      </BrowserRouter>
-
+          </Layout>
+        </UIProvider>
+      </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
